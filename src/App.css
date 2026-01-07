@@ -1,42 +1,75 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+.page_header,
+.header_main_area,
+.header_links,
+.header_account_area {
+  display: flex;
+  align-items: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.page_header {
+  padding: 2rem 4rem;
+  justify-content: space-between;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.header_links {
+  gap: 2rem;
+  padding-left: 2rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.header_account_area {
+  gap: 2rem;
 }
 
-.card {
-  padding: 2em;
+.login_btn,
+.signup_btn {
+  padding: 0.6rem 1.6rem;
+  border: none;
 }
 
-.read-the-docs {
-  color: #888;
+.login_btn,
+.signup_btn,
+.header_links li {
+  cursor: pointer;
+}
+
+.login_btn,
+.header_links li {
+  color: hsl(257, 7%, 63%);
+}
+
+.header_links li:hover {
+    color: hsl(260, 8%, 14%);
+}
+
+.login_btn {
+  background-color: transparent;
+}
+
+.signup_btn {
+  background-color: hsl(180, 66%, 49%);
+  color: hsl(0, 0%, 100%);
+  border-radius: 1.2rem;
+}
+
+.signup_btn:hover {
+    opacity: .4;
+}
+
+.mobile_hamburguer_menu {
+    border: none;
+    background-color: transparent;
+}
+
+.mobile_hamburguer_menu img {
+    width: 2rem;
+}
+
+@media screen and (max-width: 618px) {
+    .page_header {
+        padding: 2rem 2rem;
+    }
+    .header_links,
+    .header_account_area {
+        display: none;
+    }
 }
