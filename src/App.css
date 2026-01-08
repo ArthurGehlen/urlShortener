@@ -1,75 +1,56 @@
-.page_header,
-.header_main_area,
-.header_links,
-.header_account_area {
+.hero_container {
+  padding: var(--global-pad);
+  padding-right: 0;
   display: flex;
   align-items: center;
-}
-
-.page_header {
-  padding: 2rem 4rem;
   justify-content: space-between;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
 }
 
-.header_links {
-  gap: 2rem;
-  padding-left: 2rem;
+.hero_content h1 {
+  font-size: clamp(2.25rem, calc(2.9197vw + 0.8723rem), 3.5rem);
+  line-height: 2.5rem;
+  color: hsl(255, 11%, 22%);
 }
 
-.header_account_area {
-  gap: 2rem;
-}
-
-.login_btn,
-.signup_btn {
-  padding: 0.6rem 1.6rem;
-  border: none;
-}
-
-.login_btn,
-.signup_btn,
-.header_links li {
-  cursor: pointer;
-}
-
-.login_btn,
-.header_links li {
+.hero_content p {
   color: hsl(257, 7%, 63%);
+  margin-top: 2rem;
 }
 
-.header_links li:hover {
-    color: hsl(260, 8%, 14%);
-}
-
-.login_btn {
-  background-color: transparent;
-}
-
-.signup_btn {
+.hero_content button {
+  padding: 0.6rem 1.6rem;
+  margin-top: 2rem;
+  border-radius: 2rem;
+  border: none;
   background-color: hsl(180, 66%, 49%);
-  color: hsl(0, 0%, 100%);
-  border-radius: 1.2rem;
+  color: white;
 }
 
-.signup_btn:hover {
-    opacity: .4;
+.hero_img {
+  max-width: fit-content;
+  width: 30rem;
+  position: relative;
+  inset-inline-start: 6rem;
+  flex: 1 1 30rem;
 }
 
-.mobile_hamburguer_menu {
-    border: none;
-    background-color: transparent;
-}
-
-.mobile_hamburguer_menu img {
-    width: 2rem;
+.hero_img img {
+  max-width: 100%;
 }
 
 @media screen and (max-width: 618px) {
-    .page_header {
-        padding: 2rem 2rem;
-    }
-    .header_links,
-    .header_account_area {
-        display: none;
-    }
+  .hero_container {
+    padding: var(--global-pad-mobile);
+  }
+  .hero_content {
+    text-align: center;
+  }
+  .hero_content p {
+    margin-top: 1rem;
+  }
+  .hero_img {
+    inset-inline-start: 4rem;
+  }
 }

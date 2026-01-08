@@ -1,0 +1,79 @@
+.page_header,
+.header_main_area,
+.header_links,
+.header_account_area {
+  display: flex;
+  align-items: center;
+}
+
+.page_header {
+  padding: var(--global-pad);
+  justify-content: space-between;
+}
+
+.header_links {
+  gap: 2rem;
+  padding-left: 2rem;
+}
+
+.header_account_area {
+  gap: 2rem;
+}
+
+.login_btn,
+.signup_btn {
+  padding: 0.6rem 1.6rem;
+  border: none;
+}
+
+.login_btn,
+.signup_btn,
+.header_links li {
+  cursor: pointer;
+}
+
+.login_btn,
+.header_links li {
+  color: hsl(257, 7%, 63%);
+}
+
+.header_links li:hover {
+  color: hsl(260, 8%, 14%);
+}
+
+.login_btn {
+  background-color: transparent;
+}
+
+.signup_btn {
+  background-color: hsl(180, 66%, 49%);
+  color: hsl(0, 0%, 100%);
+  border-radius: 1.2rem;
+}
+
+.signup_btn:hover {
+  opacity: 0.4;
+}
+
+.mobile_hamburguer_menu {
+  display: none;
+  border: none;
+  background-color: transparent;
+}
+
+.mobile_hamburguer_menu img {
+  width: 2rem;
+}
+
+@media screen and (max-width: 618px) {
+  .page_header {
+    padding: var(--global-pad-mobile);
+  }
+  .header_links,
+  .header_account_area {
+    display: none;
+  }
+  .mobile_hamburguer_menu {
+    display: block;
+  }
+}

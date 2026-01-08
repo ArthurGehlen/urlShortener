@@ -1,3 +1,7 @@
+// Utils
+import "./Header.css";
+
+// Images
 import logo from "../images/logo.svg";
 import hamburguer_menu from "../images/bar.svg";
 
