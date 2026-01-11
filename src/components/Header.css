@@ -28,16 +28,16 @@
 
 .login_btn,
 .signup_btn,
-.header_links li {
+.header_links li a {
   cursor: pointer;
 }
 
 .login_btn,
-.header_links li {
+.header_links li a {
   color: hsl(257, 7%, 63%);
 }
 
-.header_links li:hover {
+.header_links li a:hover {
   color: hsl(260, 8%, 14%);
 }
 

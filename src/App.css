@@ -26,6 +26,7 @@
   border: none;
   background-color: hsl(180, 66%, 49%);
   color: white;
+  cursor: pointer;
 }
 
 .hero_img {
@@ -38,6 +39,47 @@
 
 .hero_img img {
   max-width: 100%;
+}
+
+.mobile_menu {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  z-index: 1;
+  background-color: hsl(257, 27%, 26%);
+  padding: 3rem 1rem;
+  border-radius: 1rem;
+  text-align: center;
+  width: calc(100% - 4rem);
+}
+
+.mobile_menu_links li:not(:first-child) {
+  margin-top: 1rem;
+}
+
+.mobile_menu_links li a {
+  color: white;
+  font-size: 1.2rem;
+}
+
+.line_divider_mobile_menu {
+  height: 0.1px;
+  width: 100%;
+  background-color: hsl(0, 0%, 75%);
+  opacity: 0.2;
+  margin: 1rem 0;
+}
+
+.account_area_mobile_menu {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.login_btn_mobile_menu,
+.signup_btn_mobile_menu {
+  color: white !important;
+  font-size: 1rem;
 }
 
 @media screen and (max-width: 618px) {
