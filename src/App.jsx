@@ -53,6 +53,11 @@ function App() {
           <button>Get Started</button>
         </div>
       </div>
+
+      <div className="input_bar_wrapper">
+        <input type="text" placeholder="Shorten a link here..." />
+        <button>Shorten it!</button>
+      </div>
     </>
   );
 }
