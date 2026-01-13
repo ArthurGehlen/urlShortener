@@ -8,6 +8,10 @@
   flex-wrap: wrap;
 }
 
+.hero_content {
+  flex: 1 1 30rem;
+}
+
 .hero_content h1 {
   font-size: clamp(2.25rem, calc(2.9197vw + 0.8723rem), 3.5rem);
   line-height: 2.5rem;
@@ -26,7 +30,10 @@
   border: none;
   background-color: hsl(180, 66%, 49%);
   color: white;
-  cursor: pointer;
+}
+
+.hero_content button:hover {
+  opacity: 0.8;
 }
 
 .hero_img {
@@ -34,7 +41,7 @@
   width: 30rem;
   position: relative;
   inset-inline-start: 6rem;
-  flex: 1 1 30rem;
+  flex: 1 1 25rem;
 }
 
 .hero_img img {
@@ -82,6 +89,41 @@
   font-size: 1rem;
 }
 
+.input_bar_wrapper {
+  margin: 0 4rem;
+  padding: 2rem 3.5rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  background-image: url(images/bg-shorten-desktop.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: hsl(257, 27%, 26%);
+  flex-wrap: wrap;
+  border-radius: .6rem;
+}
+
+.input_bar_wrapper input,
+.input_bar_wrapper button {
+  padding: 0.8rem 1.4rem;
+  border-radius: 0.6rem;
+  border: none;
+}
+
+.input_bar_wrapper input {
+  flex: 1 1 80%;
+}
+
+.input_bar_wrapper button {
+  background-color: hsl(180, 66%, 49%);
+  color: white;
+  flex: 1 1 10rem;
+}
+
+.input_bar_wrapper button:hover {
+  opacity: 0.8;
+}
+
 @media screen and (max-width: 618px) {
   .hero_container {
     padding: var(--global-pad-mobile);
@@ -94,5 +136,10 @@
   }
   .hero_img {
     inset-inline-start: 4rem;
+  }
+  .input_bar_wrapper {
+    margin: 0 2rem;
+    background-image: url(images/bg-shorten-mobile.svg);
+    padding: 1rem;
   }
 }

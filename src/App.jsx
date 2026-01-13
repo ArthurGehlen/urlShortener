@@ -54,9 +54,20 @@ function App() {
         </div>
       </div>
 
-      <div className="input_bar_wrapper">
-        <input type="text" placeholder="Shorten a link here..." />
-        <button>Shorten it!</button>
+      {/* tem uma divisão no background... */}
+      <div className="page_part_two">
+        <div className="input_bar_wrapper">
+          <input type="text" placeholder="Shorten a link here..." />
+          <button>Shorten it!</button>
+        </div>
+
+        <div className="advanced_statistics_text">
+          <h2>Advanced Statistics</h2>
+          <p>
+            Track how your links are performing across the web with our advanced
+            statistics dashboard
+          </p>
+        </div>
       </div>
     </>
   );
