@@ -2,16 +2,55 @@
 import "./App.css";
 
 // Hooks
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 // Images
 import hero_img from "./images/illustration-working.svg";
+// Images - Product details
+import brand_recognition from "./images/icon-brand-recognition.svg";
+import detailed_records from "./images/icon-brand-recognition.svg";
+import fully_customizable from "./images/icon-fully-customizable.svg";
 
 // Components
 import Header from "./components/Header";
 
 function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [url, setUrl] = useState("");
+  const [shortUrl, setShortUrl] = useState("");
+  const [error, setError] = useState("");
+
+  // conexão com a API
+  const shorten_url = async () => {
+    setError("");
+    setShortUrl("");
+
+    if (!url.trim()) {
+      setError("Please add a link");
+      return;
+    }
+
+    try {
+      const res = await fetch("/api/shorten", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ url }),
+      });
+
+      const data = await res.json();
+
+      if (data.result_url) {
+        setShortUrl(data.result_url);
+        console.log(data.result_url);
+      } else {
+        setError("Failed to shorten link");
+      }
+    } catch {
+      setError("Network error");
+    }
+  };
 
   return (
     <>
@@ -57,8 +96,12 @@ function App() {
       {/* tem uma divisão no background... */}
       <div className="page_part_two">
         <div className="input_bar_wrapper">
-          <input type="text" placeholder="Shorten a link here..." />
-          <button>Shorten it!</button>
+          <input
+            type="text"
+            onChange={(e) => setUrl(e.target.value)}
+            placeholder="Shorten a link here..."
+          />
+          <button onClick={shorten_url}>Shorten it!</button>
         </div>
 
         <div className="advanced_statistics_text">
@@ -67,6 +110,35 @@ function App() {
             Track how your links are performing across the web with our advanced
             statistics dashboard
           </p>
+        </div>
+
+        <div className="product_details_wrapper">
+          <div className="product_detail_container">
+            <img src={brand_recognition} alt="Brand" />
+            <h2>Brand Recognition</h2>
+            <p>
+              Boost your brand recognition with each click. Generic links don't
+              mean a thing. Branded links help instil confidence in your
+              content.
+            </p>
+          </div>
+          <div className="product_detail_container">
+            <img src={detailed_records} alt="Records" />
+            <h2>Detailed Records</h2>
+            <p>
+              Gain insights into who is clicking your links. Knowing when and
+              where people engage with your content helps inform better
+              decisions.
+            </p>
+          </div>
+          <div className="product_detail_container">
+            <img src={fully_customizable} alt="Customizable" />
+            <h2>Fully Customizable</h2>
+            <p>
+              Improve brand awareness and content discoverability through
+              customizable links, supercharging audience engagement.
+            </p>
+          </div>
         </div>
       </div>
     </>
