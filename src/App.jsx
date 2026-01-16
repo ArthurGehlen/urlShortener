@@ -8,7 +8,7 @@ import { useState, useEffect } from "react";
 import hero_img from "./images/illustration-working.svg";
 // Images - Product details
 import brand_recognition from "./images/icon-brand-recognition.svg";
-import detailed_records from "./images/icon-brand-recognition.svg";
+import detailed_records from "./images/icon-detailed-records.svg";
 import fully_customizable from "./images/icon-fully-customizable.svg";
 
 // Components
@@ -113,8 +113,11 @@ function App() {
         </div>
 
         <div className="product_details_wrapper">
+          <div className="product_detail_line"></div>
           <div className="product_detail_container">
-            <img src={brand_recognition} alt="Brand" />
+            <div className="product_detail_img">
+              <img src={brand_recognition} alt="Brand" />
+            </div>
             <h2>Brand Recognition</h2>
             <p>
               Boost your brand recognition with each click. Generic links don't
@@ -123,7 +126,9 @@ function App() {
             </p>
           </div>
           <div className="product_detail_container">
-            <img src={detailed_records} alt="Records" />
+            <div className="product_detail_img">
+              <img src={detailed_records} alt="Records" />
+            </div>
             <h2>Detailed Records</h2>
             <p>
               Gain insights into who is clicking your links. Knowing when and
@@ -132,7 +137,9 @@ function App() {
             </p>
           </div>
           <div className="product_detail_container">
-            <img src={fully_customizable} alt="Customizable" />
+            <div className="product_detail_img">
+              <img src={fully_customizable} alt="Customizable" />
+            </div>
             <h2>Fully Customizable</h2>
             <p>
               Improve brand awareness and content discoverability through
