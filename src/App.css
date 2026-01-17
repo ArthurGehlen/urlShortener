@@ -23,7 +23,8 @@
   margin-top: 2rem;
 }
 
-.hero_content button {
+.hero_content button,
+.calltoaction_wrapper button {
   padding: 0.6rem 1.6rem;
   margin-top: 2rem;
   border-radius: 2rem;
@@ -185,6 +186,7 @@
   padding: 2.5rem 2rem;
   padding-top: 4rem;
   flex: 1 1 14rem;
+  border-radius: .6rem;
 }
 
 .product_detail_container:nth-child(3) {
@@ -216,6 +218,21 @@
   margin-top: 1.25rem;
 }
 
+.calltoaction_wrapper {
+  width: 100%;
+  background-color: hsl(257, 27%, 26%);
+  text-align: center;
+  padding: 2rem 0;
+  background-image: url(images/bg-shorten-desktop.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.calltoaction_wrapper h2 {
+  color: white;
+  font-size: 2rem;
+}
+
 @media screen and (max-width: 618px) {
   .page_part_two {
     padding: var(--global-pad-mobile);
@@ -236,5 +253,8 @@
     margin: 0 2rem;
     background-image: url(images/bg-shorten-mobile.svg);
     padding: 1rem;
+  }
+  .calltoaction_wrapper {
+    background-image: url(images/bg-shorten-mobile.svg);
   }
 }
