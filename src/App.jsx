@@ -2,7 +2,7 @@
 import "./App.css";
 
 // Hooks
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 // Images
 import hero_img from "./images/illustration-working.svg";
@@ -13,6 +13,7 @@ import fully_customizable from "./images/icon-fully-customizable.svg";
 
 // Components
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -152,6 +153,7 @@ function App() {
         <h2>Boost your links today</h2>
         <button>Get Started</button>
       </div>
+      <Footer />  
     </>
   );
 }

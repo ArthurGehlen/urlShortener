@@ -2,14 +2,14 @@
 import "./Header.css";
 
 // Images
-import logo from "../images/logo.svg";
+import Logo from "./logo";
 import hamburguer_menu from "../images/bar.svg";
 
 const Header = ({ handle_click }) => {
   return (
     <header className="page_header">
       <div className="header_main_area">
-        <img src={logo} alt="Logo" />
+        <Logo color="#34313D" />
         <ul className="header_links">
           <li>
             <a href="#">Features</a>

@@ -16,7 +16,7 @@ ul {
   list-style: none;
 }
 
-body {
+#root {
   overflow-x: hidden; /* alerta de gambiarra :) */
 }
 
