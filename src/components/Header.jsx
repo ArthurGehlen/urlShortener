@@ -2,7 +2,7 @@
 import "./Header.css";
 
 // Images
-import Logo from "./logo";
+import Logo from "./Logo";
 import hamburguer_menu from "../images/bar.svg";
 
 const Header = ({ handle_click }) => {

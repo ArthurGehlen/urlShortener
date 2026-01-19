@@ -2,7 +2,7 @@
 import "./Footer.css";
 
 // Images
-import Logo from "./logo";
+import Logo from "./Logo";
 import facebook_icon from "../images/icon-facebook.svg";
 import twitter_icon from "../images/icon-twitter.svg";
 import pinterest_icon from "../images/icon-pinterest.svg";
