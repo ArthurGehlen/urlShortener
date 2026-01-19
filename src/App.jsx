@@ -18,13 +18,19 @@ import Footer from "./components/Footer";
 function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [url, setUrl] = useState("");
-  const [shortUrl, setShortUrl] = useState("");
   const [error, setError] = useState("");
+  const [urlList, setUrlList] = useState({
+    // "http://...(normal)": "http://...(encurtado)",
+  });
+  const [linkCopy, setLinkCopy] = useState("");
+
+  /*
+    NÃO DEIXAR CONSOLE.LOG() NO CÓDIGO :)
+  */
 
   // conexão com a API
   const shorten_url = async () => {
     setError("");
-    setShortUrl("");
 
     if (!url.trim()) {
       setError("Please add a link");
@@ -43,14 +49,20 @@ function App() {
       const data = await res.json();
 
       if (data.result_url) {
-        setShortUrl(data.result_url);
-        console.log(data.result_url);
+        setUrlList((prevData) => ({
+          ...prevData,
+          [url]: data.result_url,
+        }));
       } else {
         setError("Failed to shorten link");
       }
     } catch {
       setError("Network error");
     }
+  };
+
+  const is_link_copied = (link) => {
+    return linkCopy === link;
   };
 
   return (
@@ -97,13 +109,40 @@ function App() {
       {/* tem uma divisão no background... */}
       <div className="page_part_two">
         <div className="input_bar_wrapper">
-          <input
-            type="text"
-            onChange={(e) => setUrl(e.target.value)}
-            placeholder="Shorten a link here..."
-          />
+          <div className="input_container">
+            <input
+              className={error ? "error_input" : ""}
+              type="text"
+              onChange={(e) => setUrl(e.target.value)}
+              placeholder="Shorten a link here..."
+            />
+            {error && <p className="error_msg">{error}</p>}
+          </div>
           <button onClick={shorten_url}>Shorten it!</button>
         </div>
+
+        {Object.keys(urlList).length !== 0 && (
+          <div className="links_list_container">
+            {Object.entries(urlList).map(([key, value]) => (
+              <div className="link_container" key={key}>
+                <p>{key}</p>
+                <div className="link_container_divider"></div>
+                <div className="link_result">
+                  <p>{value}</p>
+                  <button
+                    className={is_link_copied(value) ? "copied_link" : ""}
+                    onClick={() => {
+                      setLinkCopy(value); 
+                      navigator.clipboard.writeText(value);
+                    }}
+                  >
+                    {linkCopy === value ? "Copied!" : "Copy"}
+                  </button>
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
 
         <div className="advanced_statistics_text">
           <h2>Advanced Statistics</h2>
@@ -153,7 +192,7 @@ function App() {
         <h2>Boost your links today</h2>
         <button>Get Started</button>
       </div>
-      <Footer />  
+      <Footer />
     </>
   );
 }

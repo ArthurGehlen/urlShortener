@@ -98,6 +98,7 @@
   padding: 2rem 3.5rem;
   display: flex;
   justify-content: space-between;
+  align-items: flex-start;
   gap: 1rem;
   background-image: url(images/bg-shorten-desktop.svg);
   background-size: cover;
@@ -114,8 +115,27 @@
   border: none;
 }
 
-.input_bar_wrapper input {
+.input_container {
   flex: 1 1 80%;
+}
+
+.error_input {
+  border: 2px solid hsl(0, 87%, 67%) !important;
+}
+
+.error_input::placeholder {
+  color: hsl(0, 87%, 67%);
+}
+
+.error_msg {
+  font-style: italic;
+  color: hsl(0, 87%, 67%);
+  font-size: 0.8rem;
+  margin-top: 0.6rem;
+}
+
+.input_container input {
+  width: 100%;
 }
 
 .input_bar_wrapper button {
@@ -174,7 +194,7 @@
 
 .product_detail_line {
   position: absolute;
-  height: .6rem;
+  height: 0.6rem;
   width: 100%;
   background-color: hsl(180, 66%, 49%);
 }
@@ -235,7 +255,73 @@
   font-size: 2rem;
 }
 
+.links_list_container {
+  margin-bottom: 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.link_container {
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 1rem 2rem;
+  border-radius: 0.4rem;
+  position: relative;
+}
+
+.link_result {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.link_result p {
+  color: hsl(180, 66%, 49%);
+}
+
+.link_result button {
+  color: white;
+  border: none;
+  background-color: hsl(180, 66%, 49%);
+  padding: 0.6rem 1.4rem;
+  border-radius: 0.2rem;
+  flex: 1;
+}
+
+.copied_link {
+  background-color: hsl(257, 27%, 26%) !important;
+}
+
+.link_result button:hover {
+  opacity: 0.8;
+}
+
+.link_container_divider {
+  display: none;
+}
+
 @media screen and (max-width: 618px) {
+  .link_container_divider {
+    display: block;
+    height: 1px;
+    background-color: hsla(0, 0%, 75%, .6);
+    width: 100%;
+    margin: 1rem auto;
+    position: absolute;
+    left: 0;
+    top: 2rem;
+  }
+  .link_result p {
+    margin-top: 1rem;
+  }
+  .link_container {
+    padding: .8rem 1.2rem;
+  }
   .page_part_two {
     padding: var(--global-pad-mobile);
   }
